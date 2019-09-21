@@ -1,7 +1,22 @@
 import React, { Component } from 'react'
 
 class PostItem extends Component {
-  render () {
+  constructor(props) {
+    super(props)
+    this.state = {
+      vote: 0
+    }
+  }
+
+  handleClick = () => {
+    let vote = this.state.vote
+    vote++
+    this.setState({
+      vote: vote
+    })
+  }
+
+  render() {
     const { title, author, date } = this.props
     return (
       <li>
@@ -12,6 +27,12 @@ class PostItem extends Component {
         <div>
           创建时间:<span>{date}</span>
         </div>
+        {
+          <div>
+            <button onClick={this.handleClick}>点赞</button> &nbsp;
+            <span>{this.state.vote}</span>
+          </div>
+        }
       </li>
     )
   }
