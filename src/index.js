@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import PostList from './PostList'
+import PostList from './ch02/PostList'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(<PostList />, document.getElementById('root'))
