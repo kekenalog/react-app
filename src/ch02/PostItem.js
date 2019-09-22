@@ -1,36 +1,25 @@
 import React, { Component } from 'react'
 
 class PostItem extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      vote: 0
-    }
-  }
-
   handleClick = () => {
-    let vote = this.state.vote
-    vote++
-    this.setState({
-      vote: vote
-    })
+    this.props.onVote(this.props.post.id)
   }
 
   render() {
-    const { title, author, date } = this.props
+    const { post } = this.props
     return (
       <li>
-        <div>{title}</div>
+        <div>{post.title}</div>
         <div>
-          创建人:<span>{author}</span>
+          创建人:<span>{post.author}</span>
         </div>
         <div>
-          创建时间:<span>{date}</span>
+          创建时间:<span>{post.date}</span>
         </div>
         {
           <div>
             <button onClick={this.handleClick}>点赞</button> &nbsp;
-            <span>{this.state.vote}</span>
+            <span>{post.vote}</span>
           </div>
         }
       </li>
