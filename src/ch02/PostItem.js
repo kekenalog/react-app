@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class PostItem extends Component {
   handleClick = () => {
-    this.props.onVote(this.props.post.id)
+    this.props.handleVote(this.props.post.id)
   }
 
   render() {

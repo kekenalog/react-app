@@ -45,20 +45,18 @@ class PostList extends Component {
     this.setState({
       posts: posts
     })
-    this.state.posts.map((item) => console.log('item====', item))
   }
 
   render() {
+    const parentMethod = {
+      handleVote: this.handleVote
+    }
     return (
       <div>
         帖子列表:
         <ul>
           {this.state.posts.map((item) => (
-            <PostItem
-              onVote={this.handleVote}
-              // {...parentMethod}
-              post={item}
-            />
+            <PostItem {...parentMethod} post={item} />
           ))}
         </ul>
       </div>
