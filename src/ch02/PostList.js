@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import PostItem from './PostItem'
 import { Welcome } from './Welcome'
 
+import './PostList.css'
+
 const data = [
   {
     id: 1,
@@ -52,7 +54,7 @@ class PostList extends Component {
       handleVote: this.handleVote
     }
     return (
-      <div>
+      <div className="container">
         帖子列表:
         <ul>
           {this.state.posts.map((item) => (
