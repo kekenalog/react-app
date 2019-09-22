@@ -17,7 +17,7 @@ function PostItem (props) {
       </div>
       <div className="like">
         <span>
-          <img src={like} onClick={handleClick} />
+          <img src={like} alt="vote" onClick={handleClick} />
         </span>
         <span>{post.vote}</span>
       </div>

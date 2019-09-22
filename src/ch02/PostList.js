@@ -58,7 +58,7 @@ class PostList extends Component {
         帖子列表:
         <ul>
           {this.state.posts.map((item) => (
-            <PostItem {...parentMethod} post={item} />
+            <PostItem key={item.id} {...parentMethod} post={item} />
           ))}
         </ul>
         <span>
