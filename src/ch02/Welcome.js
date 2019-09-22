@@ -1,8 +1,8 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import './style.css'
 
 function Welcome (props) {
-  return <h1>Hello, {props.name}</h1>
+  return <h1 className="foo">Hello, {props.name}</h1>
 }
 
 Welcome.defaultProps = {
