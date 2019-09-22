@@ -1,9 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function PostItem (props) {
-  const handleClick = props.handleVote(props.post.id)
-
-  const { post } = this.props
+  const handleClick = () => props.handleVote(props.post.id)
+  const { post } = props
   return (
     <li>
       <div>{post.title}</div>
@@ -21,6 +21,17 @@ function PostItem (props) {
       }
     </li>
   )
+}
+
+PostItem.prototypes = {
+  post: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    author: PropTypes.string,
+    date: PropTypes.string,
+    vote: PropTypes.number
+  }).isRequired,
+  handleVote: PropTypes.func.isRequired
 }
 
 export default PostItem

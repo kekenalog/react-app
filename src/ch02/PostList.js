@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import PostItem from './PostItem'
+import { Welcome } from './Welcome'
 
 const data = [
   {
@@ -58,6 +59,9 @@ class PostList extends Component {
             <PostItem {...parentMethod} post={item} />
           ))}
         </ul>
+        <span>
+          <Welcome />
+        </span>
       </div>
     )
   }
