@@ -1,30 +1,26 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class PostItem extends Component {
-  handleClick = () => {
-    this.props.handleVote(this.props.post.id)
-  }
+function PostItem (props) {
+  const handleClick = props.handleVote(props.post.id)
 
-  render() {
-    const { post } = this.props
-    return (
-      <li>
-        <div>{post.title}</div>
+  const { post } = this.props
+  return (
+    <li>
+      <div>{post.title}</div>
+      <div>
+        创建人:<span>{post.author}</span>
+      </div>
+      <div>
+        创建时间:<span>{post.date}</span>
+      </div>
+      {
         <div>
-          创建人:<span>{post.author}</span>
+          <button onClick={handleClick}>点赞</button> &nbsp;
+          <span>{post.vote}</span>
         </div>
-        <div>
-          创建时间:<span>{post.date}</span>
-        </div>
-        {
-          <div>
-            <button onClick={this.handleClick}>点赞</button> &nbsp;
-            <span>{post.vote}</span>
-          </div>
-        }
-      </li>
-    )
-  }
+      }
+    </li>
+  )
 }
 
 export default PostItem

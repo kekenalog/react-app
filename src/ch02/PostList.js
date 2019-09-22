@@ -36,7 +36,6 @@ class PostList extends Component {
   }
 
   handleVote = (id) => {
-    console.log('PostList id = [%s]', id)
     const posts = this.state.posts.map((item) => {
       const newItem = item.id === id ? { ...item, vote: item.vote + 1 } : item
       return newItem
