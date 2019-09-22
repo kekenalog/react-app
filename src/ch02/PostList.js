@@ -57,8 +57,8 @@ class PostList extends Component {
       <div className="container">
         帖子列表:
         <ul>
-          {this.state.posts.map((item) => (
-            <PostItem {...parentMethod} post={item} />
+          {this.state.posts.map((item, index) => (
+            <PostItem key={index} {...parentMethod} post={item} />
           ))}
         </ul>
         <span>
