@@ -8,7 +8,7 @@ class MyComponent extends Component {
     }
   }
 
-  handleClick (event) {
+  handleClick () {
     console.log('=========', this.state.number)
     const number = this.state.number + 1
     this.setState({
@@ -19,8 +19,8 @@ class MyComponent extends Component {
   render () {
     return (
       <button
-        onClick={(event) => {
-          this.handleClick(event)
+        onClick={() => {
+          this.handleClick()
         }}
       >
         Click
