@@ -10,7 +10,6 @@ class MyComponent extends Component {
   }
 
   handleClick = () => {
-    console.log('=========', this.state.number)
     const number = this.state.number + 1
     this.setState({
       number: number

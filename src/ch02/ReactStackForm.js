@@ -7,11 +7,9 @@ class ReactStackForm extends Component {
   }
 
   handleChange = (event) => {
-    console.log('before======', this.state.value)
     this.setState({
       value: event.target.value
     })
-    console.log('after======', this.state.value)
   }
 
   handleSubmit = (e) => {

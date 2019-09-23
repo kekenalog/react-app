@@ -4,6 +4,7 @@ import PostItem from './PostItem'
 import { Welcome } from './Welcome'
 import MyComponent from './MyComponent'
 import ReactStackForm from './ReactStackForm'
+import ReactStackForm2 from './ReactStackForm2'
 
 import './PostList.css'
 
@@ -71,6 +72,9 @@ class PostList extends Component {
         </span>
         <span>
           <ReactStackForm />
+        </span>
+        <span>
+          <ReactStackForm2 />
         </span>
       </div>
     )
