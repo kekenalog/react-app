@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import PostItem from './PostItem'
 import { Welcome } from './Welcome'
 import MyComponent from './MyComponent'
+import LoginForm from './LoginForm'
 
 import './PostList.css'
 
@@ -67,6 +68,12 @@ class PostList extends Component {
         </span>
         <span>
           <MyComponent />
+        </span>
+        <span>
+          <h1>表单</h1>
+        </span>
+        <span>
+          <LoginForm />
         </span>
       </div>
     )
