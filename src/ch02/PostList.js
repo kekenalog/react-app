@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 
 import PostItem from './PostItem'
-import { Welcome } from './Welcome'
-import MyComponent from './MyComponent'
-import ReactStackForm from './ReactStackForm'
-import ReactStackForm2 from './ReactStackForm2'
 
 import './PostList.css'
 
@@ -52,30 +48,35 @@ class PostList extends Component {
     })
   }
 
+  handleSave = (post) => {
+    const posts = this.state.posts.map((item) =>
+      item.id === post.id ? post : item
+    )
+    this.setState({
+      posts: posts
+    })
+  }
+
   render() {
     const parentMethod = {
-      handleVote: this.handleVote
+      handleVote: this.handleVote,
+      handleSave: this.handleSave
     }
     return (
       <div className="container">
         帖子列表:
         <ul>
           {this.state.posts.map((item) => (
-            <PostItem key={item.id} {...parentMethod} post={item} />
+            <PostItem
+              key={item.id}
+              //高级写法
+              {...parentMethod}
+              // onVote={this.handleVote}
+              // onSave={this.handleSave}
+              post={item}
+            />
           ))}
         </ul>
-        <span>
-          <Welcome />
-        </span>
-        <span>
-          <MyComponent />
-        </span>
-        <span>
-          <ReactStackForm />
-        </span>
-        <span>
-          <ReactStackForm2 />
-        </span>
       </div>
     )
   }
