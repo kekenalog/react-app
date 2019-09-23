@@ -5,31 +5,25 @@ class MyComponent extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      list: [1, 2, 3, 4],
-      current: 1
+      number: 0
     }
   }
 
-  handleClick = (item, event) => {
-    console.log('=========', item)
+  handleClick = () => {
+    console.log('=========', this.state.number)
+    const number = this.state.number + 1
     this.setState({
-      current: item
+      number: number
     })
   }
 
   render() {
     return (
-      <ul>
-        {this.state.list.map((item) => (
-          <li
-            key={item}
-            className={this.state.current === item ? 'current' : ''}
-            onClick={this.handleClick}
-          ></li>
-        ))}
-      </ul>
+      <div>
+        <div>{this.state.number}</div>
+        <button onClick={this.handleClick}>Click</button>
+      </div>
     )
-    // <button onClick={(item,ent)this.handleClick}>Click</button>
   }
 }
 
