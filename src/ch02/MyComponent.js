@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
 class MyComponent extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       number: 0
     }
   }
 
-  handleClick () {
+  handleClick = () => {
     console.log('=========', this.state.number)
     const number = this.state.number + 1
     this.setState({
@@ -16,16 +16,8 @@ class MyComponent extends Component {
     })
   }
 
-  render () {
-    return (
-      <button
-        onClick={() => {
-          this.handleClick()
-        }}
-      >
-        Click
-      </button>
-    )
+  render() {
+    return <button onClick={this.handleClick}>Click</button>
   }
 }
 
