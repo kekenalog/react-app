@@ -8,11 +8,19 @@ class MyComponent extends Component {
     }
   }
 
+  handleClick (event) {
+    console.log('=========', this.state.number)
+    const number = this.state.number + 1
+    this.setState({
+      number: number
+    })
+  }
+
   render () {
     return (
       <button
         onClick={(event) => {
-          console.log(this.state.number)
+          this.handleClick(event)
         }}
       >
         Click
