@@ -1,31 +1,14 @@
 import React, { Component } from 'react'
 
-import Modal from './ch03/Modal'
+import Hello from './ch04/Hello'
 
 import './index.css'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showModal: true
-    }
-  }
-
-  closeModal = () => {
-    this.setState({ showModal: false })
-  }
-
-  render() {
+  render () {
     return (
       <div>
-        <h2>Dashboard</h2>
-        {this.state.showModal && (
-          <Modal onClose={this.closeModal}>Modal Dialog</Modal>
-        )}
-        <span>
-          <div custom-attribute="something" />
-        </span>
+        <Hello />
       </div>
     )
   }
