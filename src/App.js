@@ -1,25 +1,31 @@
 import React, { Component } from 'react'
 
-import ErrorBoundary from './ch03/ErrorBoundary'
+import Modal from './ch03/Modal'
 
-const Profile = ({ user }) => <div>name: {user}</div>
+import './index.css'
 
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { user: { name: 'react' } }
-  } // 将user置为null，模拟异常
-  onClick = () => {
-    this.setState({ user: null })
+    this.state = {
+      showModal: true
+    }
+  }
+
+  closeModal = () => {
+    this.setState({ showModal: false })
   }
 
   render() {
     return (
       <div>
-        <ErrorBoundary>
-          <Profile user={this.state.user} />
-        </ErrorBoundary>
-        <button onClick={this.onClick}>更新</button>
+        <h2>Dashboard</h2>
+        {this.state.showModal && (
+          <Modal onClose={this.closeModal}>Modal Dialog</Modal>
+        )}
+        <span>
+          <div custom-attribute="something" />
+        </span>
       </div>
     )
   }
