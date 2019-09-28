@@ -1,17 +1,30 @@
 import React from 'react'
 
 class Hello extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
+    this.timer = null
     this.state = {
-      user: 'React',
-      display: true
+      date: new Date()
     }
   }
 
-  render () {
+  componentDidMount() {
+    this.timer = setInterval(this.updateDate, 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer)
+  }
+
+  updateDate = () => this.setState({ date: new Date() })
+
+  render() {
     return (
-      <div>{this.state.display ? <h1>Hello, {this.state.user}</h1> : null}</div>
+      <div>
+        <h1>Hello</h1>
+        <h1>{this.state.date.toDateString()}</h1>
+      </div>
     )
   }
 }
