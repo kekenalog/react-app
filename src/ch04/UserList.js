@@ -18,13 +18,23 @@ class UserList extends React.Component {
     }
   }
 
+  handleUserClick = (userId) => {
+    this.props.onSetCurrentUser(userId)
+  }
+
   render() {
     return (
       <div>
         <ul className="user-list">
           {this.props.users.map(function(user) {
             return (
-              <li key={user.id}>
+              <li
+                key={user.id}
+                className={
+                  this.props.currentUserId === user.id ? 'current' : ''
+                }
+                onClick={this.handleUserClick(user.id)}
+              >
                 <span>{user.name}</span>
               </li>
             )
