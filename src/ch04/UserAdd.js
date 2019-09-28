@@ -12,7 +12,7 @@ class UserAdd extends React.Component {
 
   handleClick = () => {
     if (this.state.newUser && this.state.newUser.length > 0) {
-      this.props.onAddUser(this.state.newUser)
+      this.context.onAddUser(this.state.newUser)
     }
   }
 
@@ -28,6 +28,10 @@ class UserAdd extends React.Component {
       </div>
     )
   }
+}
+
+UserAdd.contextTypes = {
+  onAddUser: React.PropTypes.func
 }
 
 export default UserAdd

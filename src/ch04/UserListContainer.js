@@ -12,18 +12,19 @@ class UserListContainer extends React.Component {
     }
   }
 
+  getChildContext = () => {
+    onAddUser: this.handleAddUser
+  }
+
   handleAddUser = (user) => {
-    var that = this
-    fetch('/path/to/save-user-api', {
-      method: 'POST',
-      body: JSON.stringify({ username: user })
-    }).then((response) => {
-      response.json().then((newUser) =>
-        that.setState((preState) => ({
-          users: preState.users.concat([newUser])
-        }))
-      )
-    })
+    this.setState((preState) => ({
+      users: preState.users.concat([
+        {
+          id: 'c',
+          name: 'cc'
+        }
+      ])
+    }))
   }
 
   componentDidMount() {
@@ -62,6 +63,10 @@ class UserListContainer extends React.Component {
       </div>
     )
   }
+}
+
+UserListContainer.childContextTypes = {
+  onAddUser: React.PropTypes.func
 }
 
 export default UserListContainer
