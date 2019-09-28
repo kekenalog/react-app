@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Hello from './ch04/Hello'
+import UserListContainer from './ch04/UserListContainer'
 
 import './index.css'
 
@@ -8,7 +8,7 @@ class App extends Component {
   render () {
     return (
       <div>
-        <Hello />
+        <UserListContainer />
       </div>
     )
   }
