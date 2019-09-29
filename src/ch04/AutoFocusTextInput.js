@@ -43,13 +43,12 @@ class Container extends React.Component {
   render() {
     return (
       <div>
-        {' '}
         <AutoFocusTextInput
           ref={(input) => {
             this.inputInstance = input
           }}
-        />{' '}
-        <button onClick={this.handleClick}>失去焦点</button>{' '}
+        />
+        <button onClick={this.handleClick}>失去焦点</button>
       </div>
     )
   }
